@@ -30,46 +30,40 @@
     <!--图片新闻的标题-->
     <TextView
         android:id="@+id/tv_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/iv_big_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="此处是标题" />
-    <!--图片新闻副标题-->
+    <!--地址-->
     <TextView
-        android:id="@+id/tv_fu_title_id"
-        android:visibility="gone"
+        android:id="@+id/tv_address_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tv_title_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="此处是副标题"/>
+        android:text="此处是地址" />
     <!--现金红包-->
-   <ImageView
-       android:id="@+id/iv_xianjinhongbao_id"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       />
 
-    <!--图片新闻的地点-->
-    <TextView
-        android:id="@+id/tv_add_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="此处是地点"
-        android:layout_below="@+id/tv_fu_title_id"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="此处是报名人数"
-        android:drawableLeft="@mipmap/ic_act_count"
         android:id="@+id/tv_people_count_id"
-        android:gravity="center"
-        android:layout_below="@+id/tv_fu_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/tv_address_id"
+        android:drawableLeft="@mipmap/ic_act_count"
+        android:gravity="center"
+        android:text="此处是报名人数"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!--<TextView-->
+        <!--android:text="现金红包"-->
+        <!--android:background="#CC0000"-->
+        <!--android:drawableLeft="@mipmap/bonus_ic"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/tv_hongbao_id" />-->
 
 
 </RelativeLayout>
