@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">YouJi</string>
-
+    <string-array name="tabNames">
+        <item>游迹</item>
+        <item>看世界</item>
+        <item></item>
+        <item>活动</item>
+        <item>我的</item>
+    </string-array>
 </resources>

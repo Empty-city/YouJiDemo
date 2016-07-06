@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--定制ListView的每一项的布局-->
+    <!--图片展示-->
+    <ImageView
+        android:id="@+id/iv_big_id"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher" />
+    <!--图片左下角的时间-->
+    <TextView
+        android:id="@+id/tv_time_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_big_id"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:gravity="center_vertical"
+        android:text="2016.07.18" />
+    <!--图片右下角的价格-->
+    <TextView
+        android:id="@+id/tv_price_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_big_id"
+        android:layout_alignRight="@+id/iv_big_id"
+        android:text="¥1800.00" />
+    <!--图片新闻的标题-->
+    <TextView
+        android:id="@+id/tv_title_id"
+        android:layout_below="@+id/iv_big_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="此处是标题" />
+    <!--图片新闻副标题-->
+    <TextView
+        android:id="@+id/tv_fu_title_id"
+        android:visibility="gone"
+        android:layout_below="@+id/tv_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="此处是副标题"/>
+    <!--现金红包-->
+   <ImageView
+       android:id="@+id/iv_xianjinhongbao_id"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       />
+
+    <!--图片新闻的地点-->
+    <TextView
+        android:id="@+id/tv_add_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="此处是地点"
+        android:layout_below="@+id/tv_fu_title_id"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="此处是报名人数"
+        android:drawableLeft="@mipmap/ic_act_count"
+        android:id="@+id/tv_people_count_id"
+        android:gravity="center"
+        android:layout_below="@+id/tv_fu_title_id"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>
