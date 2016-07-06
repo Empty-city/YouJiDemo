@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_user_id"
+        />
+    <TextView
+        android:id="@+id/tv_video_title"
+        android:text="用户名称"
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent" />
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_travelnote_time"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:id="@+id/iv_time_id"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_time_id"
+            android:text="时间"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <io.vov.vitamio.widget.VideoView
+            android:id="@+id/vv_id"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/tv_title_id"
+            android:text="title"
+            android:textColor="#FF0000"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="1">
+        <ImageView
+            android:src="@mipmap/ic_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_zan_id"
+            android:text="0"
+           android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_pinglun_id"
+            android:text="0"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:layout_marginLeft="150dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/detail_share_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <ImageView
+            android:src="@mipmap/head_logined"
+            android:layout_width="37dp"
+            android:layout_height="37dp" />
+        <EditText
+            android:text="评论内容"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
