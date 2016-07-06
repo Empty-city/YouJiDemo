@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:orientation="vertical"
+    tools:context="com.qf.youji.MainActivity">
+
+    <!--占位的容器控件，用于被ViewPager替换-->
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/vp_id"
+        android:layout_weight="1"/>
+    <!--RadioGroup，点击后，使用相应的Fragment对应的视图，替换占位的容器控件-->
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_id"
+        android:orientation="horizontal">
+        <!--游迹-->
+        <RadioButton
+            android:drawableTop="@drawable/select_yj"
+            android:text="游迹"
+            android:gravity="center"
+            android:button="@null"
+
+            android:checked="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_yj_id"
+            />
+        <!--看世界-->
+        <RadioButton
+            android:drawableTop="@drawable/select_ksj"
+            android:button="@null"
+            android:text="看世界"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_ksj_id"
+            />
+        <!--+-->
+        <RadioButton
+            android:src="@mipmap/add_photos"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <!--活动-->
+        <RadioButton
+            android:drawableTop="@drawable/select_hd"
+            android:button="@null"
+            android:text="活动"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_hd_id"
+            />
+        <!--我的-->
+        <RadioButton
+            android:button="@null"
+            android:drawableTop="@drawable/select_md"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="我的"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_md_id"
+            />
+    </RadioGroup>
+</LinearLayout>

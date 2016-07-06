@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_container_id"
+android:background="@mipmap/welcome_second"
+    tools:context="com.qf.youji.welcome.SecondActivity">
+    <LinearLayout
+        android:layout_marginTop="35dp"
+        android:id="@+id/ll_music_top"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:src="@mipmap/back_a"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageButton
+
+            android:src="@mipmap/small_play_ic"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:src="@mipmap/youji_edit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <!--圆环-->
+    <RelativeLayout
+        android:id="@+id/circle_outer_id"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/circle_outer_shape"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp">
+        <!--内部的圆圈-->
+        <RelativeLayout
+            android:id="@+id/circle_inner_id"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/circle_inner_shape"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:text="立即体验"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_shape"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button" />
+</RelativeLayout>
