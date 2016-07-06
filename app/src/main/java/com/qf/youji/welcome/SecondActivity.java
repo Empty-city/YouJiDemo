@@ -27,8 +27,8 @@ public class SecondActivity extends AppCompatActivity {
             public void run() {
                 //圆圈渐渐淡出
                 // 加载资源文件中描述的动画信息，变成一个动画的实例
-                AlphaAnimation show=new AlphaAnimation(0,1);
-                show.setDuration(2500);
+                AlphaAnimation show=new AlphaAnimation(0,0.5f);
+                show.setDuration(3000);
                 circle_outer.startAnimation(show);
                 AlphaAnimation a=new AlphaAnimation(1,0);
                 a.setDuration(3000);
