@@ -14,20 +14,19 @@ import com.lidroid.xutils.http.client.HttpRequest;
  */
 public class HttpUtil {
 
-    private byte[] result;
-
-    private byte[] downLoadDataFromNet(String uriStr) {
+    private void downLoadDataFromNet(String uriStr) {
 
         HttpUtils client = new HttpUtils();
 
         //发送get请求
         client.send(HttpRequest.HttpMethod.GET, uriStr, new RequestCallBack<byte[]>() {
-
-
             @Override
             public void onSuccess(ResponseInfo<byte[]> responseInfo) {
 
-                result = responseInfo.result;
+                byte[] result = responseInfo.result;
+//                ParseJSONUtils.parseJSON(result.toString(),);
+
+
             }
 
             @Override
@@ -35,6 +34,6 @@ public class HttpUtil {
             }
         });
 
-        return result;
+
     }
 }

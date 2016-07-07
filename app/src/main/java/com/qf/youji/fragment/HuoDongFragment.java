@@ -1,6 +1,7 @@
 package com.qf.youji.fragment;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        FragmentActivity activity = getActivity();
 
         db = new DataBean();
     }
@@ -38,6 +39,7 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_huodong_fragment, container, false);
 
+        //从view中获得子控件
         iv_big_id = (ImageView) view.findViewById(R.id.iv_big_id);
         tv_time_id = (TextView) view.findViewById(R.id.tv_time_id);
         tv_price_id = (TextView) view.findViewById(R.id.tv_price_id);

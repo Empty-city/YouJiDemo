@@ -32,10 +32,13 @@ public class ParseJSONUtils {
                 String confirm_user_count = object.getString("confirm_user_count");
                 String detail_url = object.getString("detail_url");
                 String share_url = object.getString("share_url");
+
+
+
                 //根据属性构建每一个对象
-                DataBean db = new DataBean(face, show_time, price, title, show_tip, confirm_user_count, detail_url, share_url);
+//                DataBean db = new DataBean(face, show_time, price, title, show_tip, confirm_user_count, detail_url, share_url);
                 //将每一个对象都添加到List集合中
-                data.add(db);
+//                data.add(db);
             }
 
 
