@@ -1,4 +1,4 @@
-package com.qf.youji.entity;
+package com.qf.youji.eneity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.qf.youji.entity;
+package com.qf.youji.eneity;
 
 /**
  * 游迹模块之图片实体类
