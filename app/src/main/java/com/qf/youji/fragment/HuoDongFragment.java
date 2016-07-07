@@ -104,7 +104,7 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
                     @Override
                     public void onResponse(String response) {
 
-                        Log.d("respone=", response);
+                        Log.e("respone=", response);
                         System.out.println("response=" + response);
 
                         Gson gson = new Gson();
@@ -141,6 +141,7 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
 
             datas.add(map);
         }
+
 
     }
 
