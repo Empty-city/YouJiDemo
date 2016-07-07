@@ -2,6 +2,7 @@ package com.qf.youji.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,14 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+import com.qf.youji.MyApp;
 import com.qf.youji.R;
-import com.qf.youji.Utils.HttpUtil;
 import com.qf.youji.common.Uris;
-import com.qf.youji.eneity.DataBean;
+import com.qf.youji.eneity.HuoDong;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -30,11 +35,12 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
     private TextView tv_title_id;//标题
     private TextView tv_address_id;//地址
     private TextView tv_people_count_id;//报名人数
-//    private DataBean db;//类的对象
+    //    private DataBean db;//类的对象
     private FragmentActivity activity;
     private ListView lv_id;//ListView
     private List<Map<String, Object>> dataResource;
-//    private MyBaseAdapter adapter;
+    //    private MyBaseAdapter adapter;
+    private List<HuoDong.DataBean> data;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,9 +82,9 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
         //填充数据源
         fillDataResource(dataResource);
         //适配器
-        SimpleAdapter adapter = new SimpleAdapter(getContext(),dataResource,R.layout.layout_huodong_item,
-                new String[]{"iv_big_id","tv_time_id","tv_price_id","tv_title_id","tv_address_id","tv_people_count_id"},
-                new int[]{R.id.iv_big_id,R.id.tv_time_id,R.id.tv_price_id,R.id.tv_title_id,R.id.tv_people_count_id});
+        SimpleAdapter adapter = new SimpleAdapter(getContext(), dataResource, R.layout.layout_huodong_item,
+                new String[]{"iv_big_id", "tv_time_id", "tv_price_id", "tv_title_id", "tv_address_id", "tv_people_count_id"},
+                new int[]{R.id.iv_big_id, R.id.tv_time_id, R.id.tv_price_id, R.id.tv_title_id, R.id.tv_address_id, R.id.tv_people_count_id});
 //        adapter = new MyBaseAdapter(getContext(), dataResource);
         //绑定适配器
         lv_id.setAdapter(adapter);
@@ -86,23 +92,63 @@ public class HuoDongFragment extends android.support.v4.app.Fragment {
 
     /**
      * 填充数据源
+     *
      * @param datas
      */
     private void fillDataResource(List<Map<String, Object>> datas) {
 
-        //调用下载和解析方法，并返回DataBean集合
-        List<DataBean> dataBeen = HttpUtil.downLoadDataFromNet("http://e-traveltech.com/api/operate/getActivities?type=1&sn=0&nu=10&fund_support=0&device_id=aimei865290020503687&plat=aphone&os_version=4.4.4&version=3.2.1&dev_model=U3&net_type=WIFI&language=1&app=3&channel_id=1110101&invitation_code=&t=1467855882&user_id=145224&s=5725bef37119b7b9d9a74d215d93bf56");
-        for(DataBean db : dataBeen){
+        final StringRequest request = new StringRequest(Uris.ACTIVITY_URL,
+                new Response.Listener<String>() {
+
+
+                    @Override
+                    public void onResponse(String response) {
+
+                        Log.d("respone=", response);
+                        System.out.println("response=" + response);
+
+                        Gson gson = new Gson();
+
+                        HuoDong huoDong = gson.fromJson(response, HuoDong.class);
+                        data = huoDong.getData();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("TAG", error.getMessage(), error);
+                    }
+                });
+        //添加到请求队列中
+        request.setTag("qx");
+        MyApp.getApp().getRequestQueue().add(request);
+
+        //----------------------------------------------------------------------//
+
+     /*   //调用下载json数据方法
+        String dataFromNet = HttpUtil.downLoadDataFromNet(Uris.ACTIVITY_URL);
+        //调用json解析方法,获得每一个对象，并存入List集合
+        List<DataBean> dataBeen = ParseJSONUtils.parseJSON(dataFromNet);
+*/
+        for (HuoDong.DataBean dbean : data) {
             Map<String, Object> map = new LinkedHashMap<>();
-            map.put("iv_big_id",db.getFace());
-            map.put("tv_time_id",db.getShow_time());
-            map.put("tv_price_id",db.getPrice());
-            map.put("tv_title_id",db.getTitle());
-            map.put("tv_address_id",db.getShow_tip());
-            map.put("tv_people_count_id",db.getConfirm_user_count());
+            map.put("iv_big_id", dbean.getFace());
+            map.put("tv_time_id", dbean.getShow_time());
+            map.put("tv_price_id", dbean.getPrice());
+            map.put("tv_title_id", dbean.getTitle());
+            map.put("tv_address_id", dbean.getShow_tip());
+            map.put("tv_people_count_id", dbean.getConfirm_user_count());
 
             datas.add(map);
         }
+
+    }
+
+    //销毁
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        MyApp.getApp().getRequestQueue().cancelAll("qx");
     }
 
     /**

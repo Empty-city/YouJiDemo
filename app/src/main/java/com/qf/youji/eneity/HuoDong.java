@@ -7,6 +7,17 @@ import java.util.List;
  */
 public class HuoDong {
 
+
+    /**
+     * error_code : 0
+     * count : 3
+     * data : [{"id":"77","origi_site":"","confirm_user_count":"4","has_bonus":"0","title":"想开飞机？随时体验！","description":"","face":"http://static.e-traveltech.com/image/bf/d3/bfd376ea32806211d0557fcb490a3b41.jpg","time":"1468684800","show_time":"2016.07.17","show_tip":"","price":"1800.00","preferential":"0","detail_url":"http://iwetuan.com/app/travel_detail?id=77","share_url":"http://iwetuan.com/app/travel_detail?id=77","type":4,"comment_type":0,"tag_logo":"","type_ids":"2,0","types":[{"id":"2","name":"徒步"}]},{"id":"62","origi_site":"","confirm_user_count":"11","has_bonus":"1","title":"向往神山\u2014\u2014走向贡嘎雪山（摄影/徒步）","description":"","face":"http://static.e-traveltech.com/image/c8/cf/c8cf13ba10fe3ce6a956df58f63726ac.jpg","time":"1469980800","show_time":"2016.08.01","show_tip":"康定，新都桥，贡嘎山乡，茨梅垭口","price":"5980.00","preferential":"0","detail_url":"http://iwetuan.com/app/travel_detail?id=62","share_url":"http://iwetuan.com/app/travel_detail?id=62","type":4,"comment_type":0,"tag_logo":"","type_ids":"","types":[]},{"id":"124","origi_site":"","confirm_user_count":"1","has_bonus":"0","title":"大师教你如何做精致花艺","description":"","face":"http://static.e-traveltech.com/image/02/99/0299c8b69cce446cb6125eca5c8c4604.jpg","time":"1468080000","show_time":"2016.07.10","show_tip":"北京","price":"18000.00","preferential":"0","detail_url":"http://iwetuan.com/app/travel_detail?id=124","share_url":"http://iwetuan.com/app/travel_detail?id=124","type":4,"comment_type":0,"tag_logo":"","type_ids":"","types":[]}]
+     * error_msg : Ok!
+     */
+
+    private int error_code;
+    private int count;
+    private String error_msg;
     /**
      * id : 77
      * origi_site :
@@ -30,6 +41,30 @@ public class HuoDong {
      */
 
     private List<DataBean> data;
+
+    public int getError_code() {
+        return error_code;
+    }
+
+    public void setError_code(int error_code) {
+        this.error_code = error_code;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public String getError_msg() {
+        return error_msg;
+    }
+
+    public void setError_msg(String error_msg) {
+        this.error_msg = error_msg;
+    }
 
     public List<DataBean> getData() {
         return data;

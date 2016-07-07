@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.qf.youji.MyApp;
 import com.qf.youji.R;
 import com.qf.youji.common.Uris;
+import com.qf.youji.eneity.PictureYouJi;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -63,6 +64,7 @@ public class YouJiFragment  extends ListFragment{
         //绑定适配器
 //        ListAdapter adapter=new MyListAdapter();
 //        list.setAdapter(adapter);
+//        setListAdapter(adapter);
     }
     //填充数据源(请求网络从网络上下载解析数据)
     private void fillDataSource() {
@@ -72,7 +74,7 @@ public class YouJiFragment  extends ListFragment{
                     @Override
                     public void onResponse(String response) {
                         Gson gson=new Gson();
-                        Uris uris = gson.fromJson(response, Uris.class);
+                        PictureYouJi pictureYouJi = gson.fromJson(response, PictureYouJi.class);
                     }
                 }, null);
         //添加到请求队列中
