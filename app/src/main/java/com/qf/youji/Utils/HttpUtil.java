@@ -1,17 +1,40 @@
 package com.qf.youji.Utils;
 
+import android.widget.Toast;
+
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 
 /**
  * 下载网络数据
  * Created by Administrator on 2016-07-06.
  */
 public class HttpUtil {
-   private byte[] downLoadDataFromNet(){
 
-      HttpUtils client = new HttpUtils();
+    private byte[] result;
+
+    private byte[] downLoadDataFromNet(String uriStr) {
+
+        HttpUtils client = new HttpUtils();
+
+        //发送get请求
+        client.send(HttpRequest.HttpMethod.GET, uriStr, new RequestCallBack<byte[]>() {
 
 
-       return null;
+            @Override
+            public void onSuccess(ResponseInfo<byte[]> responseInfo) {
+
+                result = responseInfo.result;
+            }
+
+            @Override
+            public void onFailure(HttpException error, String msg) {
+            }
+        });
+
+        return result;
     }
 }
