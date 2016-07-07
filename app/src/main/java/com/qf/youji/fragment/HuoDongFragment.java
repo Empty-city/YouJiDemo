@@ -1,7 +1,6 @@
-package com.qf.youji.Fragment;
+package com.qf.youji.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +14,9 @@ import com.qf.youji.eneity.HuoDong;
 import it.sephiroth.android.library.picasso.Picasso;
 
 /**
- * 活动选项对应的Fragment
+ * Created by Administrator on 2016/7/7.
  */
-
-public class Fragment_HuoDong extends Fragment {
-
+public class HuoDongFragment extends android.support.v4.app.Fragment {
     private ImageView iv_big_id;//图片
     private TextView tv_time_id;//时间
     private TextView tv_price_id;//价格

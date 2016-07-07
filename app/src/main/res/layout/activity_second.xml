@@ -6,30 +6,7 @@
     android:id="@+id/rl_container_id"
 android:background="@mipmap/welcome_second"
     tools:context="com.qf.youji.welcome.SecondActivity">
-    <LinearLayout
-        android:layout_marginTop="35dp"
-        android:id="@+id/ll_music_top"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageButton
-            android:src="@mipmap/back_a"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <ImageButton
 
-            android:src="@mipmap/small_play_ic"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:src="@mipmap/youji_edit"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
     <!--圆环-->
     <RelativeLayout
         android:id="@+id/circle_outer_id"
