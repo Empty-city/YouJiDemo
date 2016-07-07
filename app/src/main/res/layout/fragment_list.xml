@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/vp_id"
     >
-    <!--
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_id"
+        android:id="@android:id/list"
         android:divider="#0FFF00"
         android:dividerHeight="1dp"/>
-    <ImageButton
+   <!-- <ImageButton
         android:src="@mipmap/no_net_ic"
         android:id="@+id/iv_empty_id"
         android:visibility="invisible"
@@ -19,4 +19,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 -->
-</android.support.v4.view.ViewPager>
+</LinearLayout>

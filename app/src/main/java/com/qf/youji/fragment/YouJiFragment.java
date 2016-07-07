@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +26,8 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/7/6.
  */
-public class YouJiFragment  extends Fragment{
-    private ListView lv_id;
+public class YouJiFragment  extends ListFragment{
+    private ListView list;
     private ImageView empty;
     private List<Fragment> data;
     private FragmentActivity activity;
@@ -41,18 +42,14 @@ public class YouJiFragment  extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view=inflater.inflate(R.layout.fragment_list,null);
-//        lv_id = (ListView)view.findViewById(R.id.lv_id);
-//        empty = (ImageView) view.findViewById(R.id.iv_empty_id);
-//        if(lv_id==null){
-//            lv_id.setEmptyView(empty);
-//        }
+        list = (ListView)view.findViewById(android.R.id.list);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         //关于ListView
-//        aboutListView();
+      aboutListView();
         super.onActivityCreated(savedInstanceState);
     }
     //关于ListView的操作
@@ -64,9 +61,8 @@ public class YouJiFragment  extends Fragment{
         //适配器
 
         //绑定适配器
-
-        ListAdapter adapter=new MyListAdapter();
-        lv_id.setAdapter(adapter);
+//        ListAdapter adapter=new MyListAdapter();
+//        list.setAdapter(adapter);
     }
     //填充数据源(请求网络从网络上下载解析数据)
     private void fillDataSource() {
@@ -91,67 +87,66 @@ public class YouJiFragment  extends Fragment{
         super.onDestroy();
         MyApp.getApp().getRequestQueue().cancelAll("qx");
     }
-
-
-    private class MyListAdapter implements ListAdapter{
-        @Override
-        public boolean areAllItemsEnabled() {
-            return false;
-        }
-
-        @Override
-        public boolean isEnabled(int i) {
-            return false;
-        }
-
-        @Override
-        public void registerDataSetObserver(DataSetObserver dataSetObserver) {
-
-        }
-
-        @Override
-        public void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
-
-        }
-
-        @Override
-        public int getCount() {
-            return data.size();
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return data.get(i);
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return i;
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return false;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            return null;
-        }
-
-        @Override
-        public int getItemViewType(int i) {
-            return 0;
-        }
-
-        @Override
-        public int getViewTypeCount() {
-            return 0;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
+//自定义ListAdapter的实现类
+    private class MyListAdapter implements ListAdapter {
+    @Override
+    public boolean areAllItemsEnabled() {
+        return false;
     }
+
+    @Override
+    public boolean isEnabled(int i) {
+        return false;
+    }
+
+    @Override
+    public void registerDataSetObserver(DataSetObserver dataSetObserver) {
+
+    }
+
+    @Override
+    public void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
+
+    }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return false;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        return null;
+    }
+
+    @Override
+    public int getItemViewType(int i) {
+        return 0;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+}
 }
