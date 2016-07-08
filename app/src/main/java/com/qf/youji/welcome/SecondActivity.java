@@ -37,6 +37,7 @@ public class SecondActivity extends AppCompatActivity {
                 //圆完全显示出来之后，圆隐藏
                 SystemClock.sleep(5000);
                 startActivity(new Intent(SecondActivity.this,ThirdActivity.class));
+                finish();
 
             }
         }.start();

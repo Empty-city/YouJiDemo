@@ -19,6 +19,7 @@ public class ThirdActivity extends AppCompatActivity {
 
                 SystemClock.sleep(3000);
                 startActivity(new Intent(ThirdActivity.this,LastActivity.class));
+                finish();
             }
         }.start();
     }

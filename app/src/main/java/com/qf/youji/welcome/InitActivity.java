@@ -18,7 +18,8 @@ public class InitActivity extends AppCompatActivity {
             public void run() {
                 SystemClock.sleep(1000);
                 startActivity(new Intent(InitActivity.this,SecondActivity.class));
-                super.run();
+                finish();
+               // supGr.run();
             }
         }.start();
     }

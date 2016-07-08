@@ -19,6 +19,7 @@ public class LastActivity extends AppCompatActivity {
             public void run() {
                 SystemClock.sleep(1000);
                 startActivity(new Intent(LastActivity.this, MainActivity.class));
+                finish();
             }
         }.start();
 
